@@ -25,6 +25,7 @@
   <div>
     <button id="pushStateButton">Push State</button>
     <button id="backButton">Back</button>
+    <button id="videoStateButton">VideoState</button>
   </div>
 
   <script>
@@ -52,11 +53,17 @@
       step++;
       history.pushState({ step }, '', '/step' + step.toString());
       document.getElementById('backButton').disabled = false;
+      console.log('videoElement.paused', videoElement.paused)
     };
     document.getElementById('backButton').onclick = () => {
       step--;
       history.back();
       document.getElementById('backButton').disabled = (step === 0);
+      console.log('videoElement.paused', videoElement.paused)
+    }
+    document.getElementById('videoStateButton').onclick = () => {
+      console.log('videoElement', videoElement)
+      console.log('videoElement.paused', videoElement.paused)
     }
   </script>
 
