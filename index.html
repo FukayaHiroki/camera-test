@@ -53,16 +53,16 @@
       step++;
       history.pushState({ step }, '', '/step' + step.toString());
       document.getElementById('backButton').disabled = false;
-      window.alert('videoElement.paused', videoElement.paused)
+      window.alert(videoElement.paused)
     };
     document.getElementById('backButton').onclick = () => {
       step--;
       history.back();
       document.getElementById('backButton').disabled = (step === 0);
-      window.alert('videoElement.paused', videoElement.paused)
+      window.alert(videoElement.paused)
     }
     document.getElementById('videoStateButton').onclick = () => {
-      window.alert('videoElement.paused', videoElement.paused)
+      window.alert(videoElement.paused)
     }
   </script>
 
